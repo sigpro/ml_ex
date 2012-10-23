@@ -91,10 +91,10 @@ delta1 = sigma2'*a1;
 % temp = (delta_2(:,2:end)*Theta1);
 % temp = temp(:,2:end);
 % delta_1 = temp.*sigmoidGradient(X);
-Theta2_grad(1,:) = delta2(1,:)./m;
-Theta2_grad(2:end,:) = (lambda*Theta2(2:end,:) + delta2(2:end,:))./m;
-Theta1_grad(1,:) = delta1(1,:)./m;
-Theta1_grad(2:end,:) = (lambda*Theta1(2:end,:) + delta1(2:end,:))./m;
+Theta2_grad = delta2./m;
+Theta2_grad(:, 2:end) = (lambda*Theta2(:, 2:end) + delta2(:, 2:end))./m;
+Theta1_grad = delta1./m;
+Theta1_grad(:, 2:end) = (lambda*Theta1(:, 2:end) + delta1(:, 2:end))./m;
 
 
 
